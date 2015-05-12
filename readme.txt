@@ -1,7 +1,7 @@
 === Videojs HTML5 Player ===
 Contributors: naa986
 Donate link: http://wphowto.net/
-Tags: video, wpvideo, flash, html5, iPad, iphone, ipod, mobile, playlists, embed video, videojs, video html5, flash player, player, video player
+Tags: video, wpvideo, flash, html5, iPad, iphone, ipod, mobile, playlists, embed video, videojs, flash player, player, video player
 Requires at least: 4.2
 Tested up to: 4.2
 Stable tag: 1.0.1
@@ -21,7 +21,7 @@ Videojs HTML5 Player is a user-friendly plugin that supports video playback on d
 * Embed HTML5 videos which are compatible with all major browsers.
 * Embed videos with poster images.
 * Embed videos using videojs player.
-* Automatically play a video when the page in rendered.
+* Automatically play a video when the page is rendered.
 
 = Videojs HTML5 Player Plugin Usage =
 
