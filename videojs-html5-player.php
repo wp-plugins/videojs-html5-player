@@ -1,7 +1,7 @@
 <?php
 /*
   Plugin Name: Videojs HTML5 Player
-  Version: 1.0.1
+  Version: 1.0.2
   Plugin URI: http://wphowto.net/videojs-html5-player-for-wordpress-757
   Author: naa986
   Author URI: http://wphowto.net/
@@ -15,7 +15,7 @@ if (!class_exists('VIDEOJS_HTML5_PLAYER')) {
 
     class VIDEOJS_HTML5_PLAYER {
 
-        var $plugin_version = '1.0.1';
+        var $plugin_version = '1.0.2';
 
         function __construct() {
             define('VIDEOJS_HTML5_PLAYER_VERSION', $this->plugin_version);
@@ -100,23 +100,46 @@ function videojs_html5_video_embed_handler($atts) {
     extract(shortcode_atts(array(
         'url' => '',
         'width' => '',
+        'controls' => '',
+        'preload' => 'auto',
         'autoplay' => 'false',
         'poster' => '',
         'class' => '',
     ), $atts));
-    if ($autoplay == "true") {
+    //controls
+    if($controls == "false") {
+        $controls = "";
+    } 
+    else{
+        $controls = " controls";
+    }
+    //preload
+    if($preload == "metadata") {
+        $preload = ' preload="metadata"';
+    }
+    else if($preload == "none") {
+        $preload = ' preload="none"';
+    }
+    else{
+        $preload = ' preload="auto"';
+    }
+    //autoplay
+    if($autoplay == "true"){
         $autoplay = " autoplay";
-    } else {
+    }
+    else{
         $autoplay = "";
     }
+    //poster
     if(!empty($poster)) {
         $poster = ' poster="'.$poster.'"';
     }
+    //
     $container = "videocontent" . uniqid();
     $player = "videojs" . uniqid();
     $output = <<<EOT
     <div id="$container">
-    <video id="$player" class="video-js vjs-default-skin" controls preload="auto" width="auto" height="auto"{$poster}{$autoplay} data-setup='{}'>
+    <video id="$player" class="video-js vjs-default-skin" width="auto" height="auto"{$controls}{$preload}{$autoplay}{$poster} data-setup='{}'>
         <source src="$url" type='video/mp4'>
     </video>
     </div>

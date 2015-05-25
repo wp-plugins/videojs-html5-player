@@ -4,7 +4,7 @@ Donate link: http://wphowto.net/
 Tags: video, wpvideo, flash, html5, iPad, iphone, ipod, mobile, playlists, embed video, videojs, flash player, player, video player, embed, lightweight, minimal, myvideo, responsive  
 Requires at least: 4.2
 Tested up to: 4.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,6 +42,23 @@ The following options are supported in the shortcode.
 **Width**
 
 Defines the width of the video file (Height is automatically calculated).
+
+**Preload**
+
+Specifies if and how the video should be loaded when the page loads. Defaults to "auto" (the video should be loaded entirely when the page loads). Other options:
+
+* "metadata" - only metadata should be loaded when the page loads
+* "none" - the video should not be loaded when the page loads
+
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" width="480" preload="metadata"]`
+
+**Controls**
+
+Specifies that video controls should be displayed. Defaults to "true". In order to hide controls set this parameter to "false".
+
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" width="480" controls="false"]`
+
+When you disable controls users will not be able to interact with your videos. So It is recommended that you enable autoplay for a video with no controls.
 
 **Autoplay**
 
@@ -87,5 +104,11 @@ none
 
 == Changelog ==
 
+= 1.0.2 =
+
+* Added an option to show/hide controls
+* Added an option to set preload attribute
+
 = 1.0.1 =
+
 * First commit
