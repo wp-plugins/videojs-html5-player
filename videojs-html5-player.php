@@ -1,7 +1,7 @@
 <?php
 /*
   Plugin Name: Videojs HTML5 Player
-  Version: 1.0.3
+  Version: 1.0.4
   Plugin URI: http://wphowto.net/videojs-html5-player-for-wordpress-757
   Author: naa986
   Author URI: http://wphowto.net/
@@ -15,7 +15,7 @@ if (!class_exists('VIDEOJS_HTML5_PLAYER')) {
 
     class VIDEOJS_HTML5_PLAYER {
 
-        var $plugin_version = '1.0.3';
+        var $plugin_version = '1.0.4';
 
         function __construct() {
             define('VIDEOJS_HTML5_PLAYER_VERSION', $this->plugin_version);

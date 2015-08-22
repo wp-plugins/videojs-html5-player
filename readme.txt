@@ -3,8 +3,8 @@ Contributors: naa986
 Donate link: http://wphowto.net/
 Tags: video, wpvideo, flash, html5, iPad, iphone, ipod, mobile, playlists, embed video, videojs, flash player, player, video player, embed, lightweight, minimal, myvideo, responsive  
 Requires at least: 4.2
-Tested up to: 4.2
-Stable tag: 1.0.3
+Tested up to: 4.3
+Stable tag: 1.0.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -115,6 +115,10 @@ Yes.
 none
 
 == Changelog ==
+
+= 1.0.4 =
+
+* Videojs HTML5 Player is now compatible with WordPress 4.3
 
 = 1.0.3 =
 
