@@ -1,7 +1,7 @@
 <?php
 /*
   Plugin Name: Videojs HTML5 Player
-  Version: 1.0.4
+  Version: 1.0.5
   Plugin URI: http://wphowto.net/videojs-html5-player-for-wordpress-757
   Author: naa986
   Author URI: http://wphowto.net/
@@ -15,7 +15,7 @@ if (!class_exists('VIDEOJS_HTML5_PLAYER')) {
 
     class VIDEOJS_HTML5_PLAYER {
 
-        var $plugin_version = '1.0.4';
+        var $plugin_version = '1.0.5';
 
         function __construct() {
             define('VIDEOJS_HTML5_PLAYER_VERSION', $this->plugin_version);
@@ -150,21 +150,24 @@ function videojs_html5_video_embed_handler($atts) {
     if(!empty($poster)) {
         $poster = ' poster="'.$poster.'"';
     }
-    //
-    $container = "videocontent" . uniqid();
     $player = "videojs" . uniqid();
+    //custom style
+    $style = '';   
+    if(!empty($width)){
+        $style = <<<EOT
+        <style>
+        #$player {
+            max-width:{$width}px;   
+        }
+        </style>
+EOT;
+        
+    }
     $output = <<<EOT
-    <div id="$container">
-    <video id="$player" class="video-js vjs-default-skin" width="auto" height="auto"{$controls}{$preload}{$autoplay}{$loop}{$muted}{$poster} data-setup='{}'>
+    <video id="$player" class="video-js vjs-default-skin"{$controls}{$preload}{$autoplay}{$loop}{$muted}{$poster} data-setup='{"fluid": true}'>
         <source src="$url" type='video/mp4'>
     </video>
-    </div>
-    <style>
-    #$container {
-        width:100%; 
-        max-width:{$width}px;
-    }
-    </style>
+    $style
 EOT;
     return $output;
 }

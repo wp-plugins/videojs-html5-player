@@ -4,7 +4,7 @@ Donate link: http://wphowto.net/
 Tags: video, wpvideo, flash, html5, iPad, iphone, ipod, mobile, playlists, embed video, videojs, flash player, player, video player, embed, lightweight, minimal, myvideo, responsive  
 Requires at least: 4.2
 Tested up to: 4.3
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,7 +31,7 @@ Videojs HTML5 Player is a user-friendly plugin that supports video playback on d
 
 In order to embed a video create a new post/page and use the following shortcode:
 
-`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" width="480"]`
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4"]`
 
 Here, "url" is a shortcode parameter that you need to replace with the actual URL of the video file.
 
@@ -41,7 +41,9 @@ The following options are supported in the shortcode.
 
 **Width**
 
-Defines the width of the video file (Height is automatically calculated).
+Defines the width of the video file (Height is automatically calculated). This option is not required unless you want to limit the maximum width of the video.
+
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" width="480"]`
 
 **Preload**
 
@@ -50,13 +52,13 @@ Specifies if and how the video should be loaded when the page loads. Defaults to
 * "metadata" - only metadata should be loaded when the page loads
 * "none" - the video should not be loaded when the page loads
 
-`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" width="480" preload="metadata"]`
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" preload="metadata"]`
 
 **Controls**
 
 Specifies that video controls should be displayed. Defaults to "true". In order to hide controls set this parameter to "false".
 
-`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" width="480" controls="false"]`
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" controls="false"]`
 
 When you disable controls users will not be able to interact with your videos. So It is recommended that you enable autoplay for a video with no controls.
 
@@ -64,25 +66,25 @@ When you disable controls users will not be able to interact with your videos. S
 
 Causes the video file to automatically play when the page loads.
 
-`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" width="480" autoplay="true"]`
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" autoplay="true"]`
 
 **Poster**
 
 Defines image to show as placeholder before the video plays.
 
-`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" width="480" poster="http://example.com/wp-content/uploads/poster.jpg"]`
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" poster="http://example.com/wp-content/uploads/poster.jpg"]`
 
 **Loop**
 
 Causes the video file to loop to beginning when finished and automatically continue playing.
 
-`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" width="480" loop="true"]`
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" loop="true"]`
 
 **Muted**
 
 Specifies that the audio output of the video should be muted.
 
-`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" width="480" muted="true"]`
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" muted="true"]`
 
 For detailed documentation please visit the [Videojs HTML5 Player](http://wphowto.net/videojs-html5-player-for-wordpress-757) plugin page
 
@@ -115,6 +117,10 @@ Yes.
 none
 
 == Changelog ==
+
+= 1.0.5 =
+
+* Updated the Videojs library to 5.0.0
 
 = 1.0.4 =
 
