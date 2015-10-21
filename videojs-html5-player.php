@@ -1,7 +1,7 @@
 <?php
 /*
   Plugin Name: Videojs HTML5 Player
-  Version: 1.0.5
+  Version: 1.0.6
   Plugin URI: http://wphowto.net/videojs-html5-player-for-wordpress-757
   Author: naa986
   Author URI: http://wphowto.net/
@@ -15,7 +15,7 @@ if (!class_exists('VIDEOJS_HTML5_PLAYER')) {
 
     class VIDEOJS_HTML5_PLAYER {
 
-        var $plugin_version = '1.0.5';
+        var $plugin_version = '1.0.6';
 
         function __construct() {
             define('VIDEOJS_HTML5_PLAYER_VERSION', $this->plugin_version);
@@ -99,6 +99,7 @@ function videojs_html5_player_header() {
 function videojs_html5_video_embed_handler($atts) {
     extract(shortcode_atts(array(
         'url' => '',
+        'webm' => '',
         'width' => '',
         'controls' => '',
         'preload' => 'auto',
@@ -108,6 +109,15 @@ function videojs_html5_video_embed_handler($atts) {
         'poster' => '',
         'class' => '',
     ), $atts));
+    if(empty($url)){
+        return 'you need to specify the src of the video file';
+    }
+    //src
+    $src = '<source src="'.$url.'" type="video/mp4" />';
+    if (!empty($webm)) {
+        $webm = '<source src="'.$webm.'" type="video/webm" />';
+        $src = $src.$webm; 
+    }
     //controls
     if($controls == "false") {
         $controls = "";
@@ -165,7 +175,7 @@ EOT;
     }
     $output = <<<EOT
     <video id="$player" class="video-js vjs-default-skin"{$controls}{$preload}{$autoplay}{$loop}{$muted}{$poster} data-setup='{"fluid": true}'>
-        <source src="$url" type='video/mp4'>
+        $src
     </video>
     $style
 EOT;

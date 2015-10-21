@@ -4,7 +4,7 @@ Donate link: http://wphowto.net/
 Tags: video, wpvideo, flash, html5, iPad, iphone, ipod, mobile, playlists, embed video, videojs, flash player, player, video player, embed, lightweight, minimal, myvideo, responsive  
 Requires at least: 4.2
 Tested up to: 4.3
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -33,11 +33,17 @@ In order to embed a video create a new post/page and use the following shortcode
 
 `[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4"]`
 
-Here, "url" is a shortcode parameter that you need to replace with the actual URL of the video file.
+Here, "url" is the location of the MP4 video source file (H.264 encoded). You need to replace the sample URL with the actual URL of the video file.
 
-= Options =
+= Video Shortcode Options =
 
 The following options are supported in the shortcode.
+
+**WebM**
+
+You can specify a WebM video file in addition to the source MP4 video file. This parameter is optional.
+
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" webm="http://example.com/wp-content/uploads/videos/myvid.webm"]`
 
 **Width**
 
@@ -117,6 +123,10 @@ Yes.
 none
 
 == Changelog ==
+
+= 1.0.6 =
+
+* Added a new shortcode parameter to accept WebM as a video source format.
 
 = 1.0.5 =
 
