@@ -4,7 +4,7 @@ Donate link: http://wphowto.net/
 Tags: video, wpvideo, flash, html5, iPad, iphone, ipod, mobile, playlists, embed video, videojs, flash player, player, video player, embed, lightweight, minimal, myvideo, responsive  
 Requires at least: 4.2
 Tested up to: 4.3
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -26,6 +26,7 @@ Videojs HTML5 Player is a user-friendly plugin that supports video playback on d
 * No setup required, simply install and start embedding videos
 * Lightweight and compatible with the latest version of WordPress
 * Clean and sleek player with no watermark
+* fallbacks for other HTML5-supported filetypes (WebM, Ogv)
 
 = Videojs HTML5 Player Plugin Usage =
 
@@ -44,6 +45,12 @@ The following options are supported in the shortcode.
 You can specify a WebM video file in addition to the source MP4 video file. This parameter is optional.
 
 `[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" webm="http://example.com/wp-content/uploads/videos/myvid.webm"]`
+
+**Ogv**
+
+You can specify a Ogv video file in addition to the source MP4 & WebM video files. This parameter is optional.
+
+`[videojs_video url="http://example.com/wp-content/uploads/videos/myvid.mp4" webm="http://example.com/wp-content/uploads/videos/myvid.webm" ogv="http://example.com/wp-content/uploads/videos/myvid.ogv"]`
 
 **Width**
 
@@ -123,6 +130,10 @@ Yes.
 none
 
 == Changelog ==
+
+= 1.0.7 =
+
+* Added a new shortcode parameter to accept Ogv as a video source format.
 
 = 1.0.6 =
 
